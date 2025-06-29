@@ -18,10 +18,13 @@ export function Header() {
   return (
     <header className="bg-gray-900 text-white py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-yellow-400">BUNKER</div>
+        <div className="text-2xl font-bold text-yellow-400 font-serif">BUNKER</div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
+          <a href="/about" className="hover:text-yellow-400 transition-colors">
+            О нас
+          </a>
           <a href="#services" className="hover:text-yellow-400 transition-colors">
             Услуги
           </a>
@@ -58,6 +61,9 @@ export function Header() {
         }`}
       >
         <nav className="px-4 py-4 space-y-4 bg-gray-800">
+          <a href="/about" className="block py-2 hover:text-yellow-400 transition-colors" onClick={closeMobileMenu}>
+            О нас
+          </a>
           <a href="#services" className="block py-2 hover:text-yellow-400 transition-colors" onClick={closeMobileMenu}>
             Услуги
           </a>
