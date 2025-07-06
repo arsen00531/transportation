@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -10,28 +12,76 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4">Услуги</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Складские услуги</li>
-              <li>Доставка товаров</li>
-              <li>Таможенное оформление</li>
-              <li>Контроль качества</li>
+              <li>
+                <a href="#services" className="hover:text-yellow-400 transition-colors">
+                  Складские услуги
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-yellow-400 transition-colors">
+                  Логистика
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-yellow-400 transition-colors">
+                  Таможенное оформление
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="hover:text-yellow-400 transition-colors">
+                  Контроль качества
+                </a>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4">Компания</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>О нас</li>
-              <li>Наши склады</li>
-              <li>Отзывы клиентов</li>
-              <li>Карьера</li>
+              <li>
+                <Link href="/about" className="hover:text-yellow-400 transition-colors">
+                  О нас
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-yellow-400 transition-colors">
+                  Наши склады
+                </Link>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                  Отзывы клиентов
+                </a>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-yellow-400 transition-colors">
+                  Карьера
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4">Поддержка</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>Часто задаваемые вопросы</li>
-              <li>Отследить груз</li>
-              <li>Техподдержка</li>
-              <li>Документы</li>
+              <li>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                  Часто задаваемые вопросы
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                  Отследить груз
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                  Техподдержка
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                  Документы
+                </a>
+              </li>
             </ul>
           </div>
         </div>
