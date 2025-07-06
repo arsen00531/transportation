@@ -9,10 +9,10 @@ export function HeroSection() {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Фулфиллмент из <span className="text-yellow-400">Китая</span> в Россию
+              Фулфиллмент <span className="font-bold text-yellow-400 font-serif">BUNKER</span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl lg:max-w-none">
-              Полный цикл логистики: от склада в Китае до двери клиента в России. Надежно, быстро, выгодно.
+            Ваш надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 text-lg px-8 py-4">
@@ -57,20 +57,21 @@ export function HeroSection() {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-700">
           <div className="text-center">
-            <div className="text-3xl font-bold text-yellow-400">500+</div>
-            <div className="text-gray-300">Довольных клиентов</div>
+            <div className="text-3xl font-bold text-yellow-400">5 000 ед./день</div>
+            <div className="text-gray-300">Скорость</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-yellow-400">15</div>
-            <div className="text-gray-300">Дней доставка</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-yellow-400">99.8%</div>
-            <div className="text-gray-300">Сохранность груза</div>
+            <div className="text-3xl font-bold text-yellow-400">На 28.9%</div>
+            <div className="text-gray-300">Дешевле чем у конкурентов</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-yellow-400">24/7</div>
             <div className="text-gray-300">Поддержка</div>
+          </div>
+
+          <div className="text-center">
+            <div className="text-3xl font-bold text-yellow-400">3</div>
+            <div className="text-gray-300">Года на рынке</div>
           </div>
         </div>
       </div>

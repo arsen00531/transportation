@@ -1,4 +1,4 @@
-import { Package, Truck, Shield, CheckCircle } from "lucide-react"
+import { Package, Truck, Shield, CheckCircle, Headset } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function ServicesSection() {
@@ -40,7 +40,7 @@ export function ServicesSection() {
               <Truck className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Логистика</h3>
               <p className="text-gray-600 mb-6">
-                Надежная доставка товаров из Китая в Россию с отслеживанием на всех этапах пути.
+                Надежная доставка по всей России
               </p>
               <ul className="text-left space-y-2">
                 <li className="flex items-center">
@@ -49,11 +49,11 @@ export function ServicesSection() {
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                  Отслеживание доставки
+                  Забор товара с Москвы и МО
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                  Доставка до склада
+                  Доставка до складов
                 </li>
               </ul>
             </CardContent>
@@ -61,23 +61,23 @@ export function ServicesSection() {
 
           <Card className="border-2 hover:border-yellow-400 transition-colors">
             <CardContent className="p-8 text-center">
-              <Shield className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Таможенное оформление</h3>
+              <Headset className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Поддержка</h3>
               <p className="text-gray-600 mb-6">
-                Полное таможенное сопровождение и оформление документов. Работаем с любыми товарами.
+                Оперативная помощь и сопровождение
               </p>
               <ul className="text-left space-y-2">
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                  Подготовка документов
+                  Бесплатная консультация
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                  Таможенная очистка
+                  Бесплатный расчет стоимости
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-yellow-400 mr-2" />
-                  Сертификация товаров
+                  На связи 24/7
                 </li>
               </ul>
             </CardContent>
