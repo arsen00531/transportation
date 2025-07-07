@@ -2,6 +2,7 @@ import { Header } from "@/components/sections/header"
 import { Footer } from "@/components/sections/footer"
 import { Users, Target, Award, Globe, Calendar, TrendingUp } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import BunkerLogo from "@/components/ui/bunker-logo"
 
 export default function AboutPage() {
   return (
@@ -12,11 +13,10 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            О компании <span className="text-yellow-400">BUNKER</span>
+            О компании <BunkerLogo />
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Мы создаем мосты между китайскими производителями и российскими предпринимателями, обеспечивая надежную и
-            эффективную логистику.
+            Один из самых надежных компаний в Москве по фулфилменту
           </p>
         </div>
       </section>
@@ -34,12 +34,12 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Начало пути</h3>
                 <p className="text-gray-600 mb-6">
-                  BUNKER была основана в 2018 году группой предпринимателей, которые столкнулись с проблемами доставки
-                  товаров из Китая. Мы решили создать сервис, который бы решал все логистические задачи комплексно.
+                  Компания <BunkerLogo /> была основана группой предпренимателей, которые столкнулись с множествами проблем при работе
+                  с другими фулфиллментами, учитывая все трудности и недостатки существующих решений, мы решили создать идеальный
+                  сервис, который подходит большинству селлеров.
                 </p>
                 <p className="text-gray-600">
-                  За 6 лет работы мы выросли от небольшой команды до крупной логистической компании с собственными
-                  складами в Китае и России, обслуживающей сотни клиентов ежемесячно.
+                  За 3 года работы объём нашей работы увеличился в 5 раз, мы проработали со всеми возможными категориями товаров.
                 </p>
               </div>
               <div className="bg-gray-100 rounded-lg p-8">
@@ -85,8 +85,7 @@ export default function AboutPage() {
                 <Target className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Миссия</h3>
                 <p className="text-gray-600">
-                  Упростить международную торговлю, предоставляя надежные и эффективные логистические решения для
-                  развития бизнеса наших клиентов.
+                  Упростить селлерам работу с маркетплейсами, мы даем продавцам маркетплейсов возможность сосредоточиться на продвижении их кабинетов.
                 </p>
               </CardContent>
             </Card>

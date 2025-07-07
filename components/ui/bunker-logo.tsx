@@ -1,10 +1,8 @@
 import React from 'react'
 
-type Props = {}
-
-function BunkerLogo({}: Props) {
+function BunkerLogo() {
   return (
-    <span className="text-2xl font-bold text-yellow-400 font-serif">BUNKER</span>
+    <span className="font-bold text-yellow-400 font-serif">BUNKER</span>
   )
 }
 

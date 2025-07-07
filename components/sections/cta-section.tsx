@@ -11,7 +11,7 @@ export function CTASection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-gray-900 text-white hover:bg-gray-800 text-lg px-8 py-4">
-            Получить расчет <ArrowRight className="ml-2 h-5 w-5" />
+            Наши цены <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
             size="lg"

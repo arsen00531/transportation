@@ -1,4 +1,5 @@
 import Link from "next/link"
+import BunkerLogo from "../ui/bunker-logo"
 
 export function Footer() {
   return (
@@ -6,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="text-2xl font-bold text-yellow-400 mb-4">BUNKER</div>
+            <div className="text-2xl font-bold text-yellow-400 mb-4"><BunkerLogo /></div>
             <p className="text-gray-300">Надежный партнер в сфере фулфиллмента и логистики между Китаем и Россией.</p>
           </div>
           <div>

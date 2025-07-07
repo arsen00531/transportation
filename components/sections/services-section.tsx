@@ -1,4 +1,4 @@
-import { Package, Truck, Shield, CheckCircle, Headset } from "lucide-react"
+import { Package, Truck, CheckCircle, Headset } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function ServicesSection() {

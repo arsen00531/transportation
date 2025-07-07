@@ -1,4 +1,4 @@
-import { Clock, Users, Star, Package } from "lucide-react"
+import { Clock, Users, Star, Package, Tag } from "lucide-react"
 
 export function AdvantagesSection() {
   return (
@@ -31,6 +31,22 @@ export function AdvantagesSection() {
             <div>
               <h3 className="text-xl font-bold mb-2">Персональный менеджер</h3>
               <p className="text-gray-300">Индивидуальный подход и постоянная поддержка</p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <Package className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-bold mb-2">Скорость упаковки</h3>
+              <p className="text-gray-300">До 5 000 единиц в день — быстро и без потери качества</p>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-4">
+            <Tag className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-bold mb-2">Выгоднее конкурентов</h3>
+              <p className="text-gray-300">Предлагаем лучшие условия на рынке фулфилмента</p>
             </div>
           </div>
         </div>
