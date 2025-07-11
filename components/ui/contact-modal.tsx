@@ -23,7 +23,7 @@ interface ContactModalProps {
   description?: string
 }
 
-// Функция для форматирования номера телефона
+// Обновите функцию `formatPhoneNumber` следующим образом:
 function formatPhoneNumber(value: string): string {
   // Удаляем все символы кроме цифр
   const numbers = value.replace(/\D/g, "")
@@ -46,37 +46,22 @@ function formatPhoneNumber(value: string): string {
   cleanNumbers = cleanNumbers.slice(0, 11)
 
   // Форматируем номер
-  if (cleanNumbers.length >= 1) {
-    let formatted = "+7"
+  let formatted = "+7"
+  if (cleanNumbers.length > 1) {
+    formatted += ` ${cleanNumbers.slice(1, 4)}` // Удалены скобки
 
-    if (cleanNumbers.length > 1) {
-      const areaCode = cleanNumbers.slice(1, 4)
-      formatted += ` (${areaCode}`
-
-      if (cleanNumbers.length >= 4) {
-        formatted += ")"
-
-        if (cleanNumbers.length > 4) {
-          const firstPart = cleanNumbers.slice(4, 7)
-          formatted += ` ${firstPart}`
-
-          if (cleanNumbers.length > 7) {
-            const secondPart = cleanNumbers.slice(7, 9)
-            formatted += `-${secondPart}`
-
-            if (cleanNumbers.length > 9) {
-              const thirdPart = cleanNumbers.slice(9, 11)
-              formatted += `-${thirdPart}`
-            }
-          }
+    if (cleanNumbers.length > 4) {
+      formatted += ` ${cleanNumbers.slice(4, 7)}`
+      if (cleanNumbers.length > 7) {
+        formatted += `-${cleanNumbers.slice(7, 9)}`
+        if (cleanNumbers.length > 9) {
+          formatted += `-${cleanNumbers.slice(9, 11)}`
         }
       }
     }
-
-    return formatted
   }
 
-  return "+7"
+  return formatted.trim() // Обрезаем пробелы в конце
 }
 
 export function ContactModal({
@@ -98,13 +83,10 @@ export function ContactModal({
       newErrors.name = "Имя должно содержать минимум 2 символа"
     }
 
-    if (!phone.trim() || phone.length < 18) {
-      newErrors.phone = "Введите корректный номер телефона"
-    }
-
-    const phoneRegex = /^\+7 $$\d{3}$$ \d{3}-\d{2}-\d{2}$/
-    if (phone && !phoneRegex.test(phone)) {
-      newErrors.phone = "Номер телефона должен быть в формате +7 (999) 123-45-67"
+    // Обновленная валидация для нового формата
+    const phoneDigits = phone.replace(/\D/g, "")
+    if (!phoneDigits || phoneDigits.length !== 11) {
+      newErrors.phone = "Введите корректный номер телефона (11 цифр)"
     }
 
     setErrors(newErrors)
@@ -139,7 +121,7 @@ export function ContactModal({
     try {
       const formData = new FormData()
       formData.append("name", name)
-      formData.append("phone", phone)
+      formData.append("phone", phone.replace(/\D/g, "")) // Отправляем только цифры на сервер
 
       const result = await submitContactForm(formData)
 
@@ -194,7 +176,7 @@ export function ContactModal({
               Номер телефона
             </label>
             <Input
-              placeholder="+7 (999) 123-45-67"
+              placeholder="+7 XXX XXX-XX-XX" // Обновленный плейсхолдер
               value={phone}
               onChange={handlePhoneChange}
               onFocus={(e) => {
@@ -204,7 +186,7 @@ export function ContactModal({
                 }
               }}
               className="focus:border-yellow-400 focus:ring-yellow-400 font-mono"
-              maxLength={18}
+              maxLength={16} // Максимальная длина для +7 XXX XXX-XX-XX (11 цифр + 5 пробелов/дефисов)
             />
             {errors.phone && <p className="text-sm text-red-500">{errors.phone}</p>}
           </div>
