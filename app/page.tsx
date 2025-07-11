@@ -8,10 +8,12 @@ import { AdvantagesSection } from "@/components/sections/advantages-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { Footer } from "@/components/sections/footer"
+import { ScrollToTop } from "@/components/ui/scroll-to-top"
 
 export default function BunkerLanding() {
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       <Header />
       <HeroSection />
       <ServicesSection />
