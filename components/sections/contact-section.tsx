@@ -6,17 +6,26 @@ export function ContactSection() {
     {
       icon: Phone,
       title: "Телефон",
-      info: ["+7 (495) 123-45-67", "+86 138 0013 8000"],
+      info: [
+        { text: "+7 (495) 123-45-67", href: "tel:+74951234567" },
+        { text: "+86 138 0013 8000", href: "tel:+8613800138000" },
+      ],
     },
     {
       icon: Mail,
       title: "Email",
-      info: ["info@bunker-logistics.com", "support@bunker-logistics.com"],
+      info: [
+        { text: "info@bunker-logistics.com", href: "mailto:info@bunker-logistics.com" },
+        { text: "support@bunker-logistics.com", href: "mailto:support@bunker-logistics.com" },
+      ],
     },
     {
       icon: MapPin,
       title: "Офисы",
-      info: ["Москва, Россия", "Гуанчжоу, Китай"],
+      info: [
+        { text: "Москва, Россия", href: null },
+        { text: "Гуанчжоу, Китай", href: null },
+      ],
     },
   ]
 
@@ -37,9 +46,18 @@ export function ContactSection() {
                 <contact.icon className="h-12 w-12 text-yellow-400 mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{contact.title}</h3>
                 {contact.info.map((item, itemIndex) => (
-                  <p key={itemIndex} className="text-gray-600">
-                    {item}
-                  </p>
+                  <div key={itemIndex} className="text-gray-600">
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="hover:text-yellow-600 transition-colors cursor-pointer hover:underline"
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      <span>{item.text}</span>
+                    )}
+                  </div>
                 ))}
               </div>
             </AnimatedSection>

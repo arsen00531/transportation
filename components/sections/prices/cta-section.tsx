@@ -1,5 +1,6 @@
 import { CheckCircle, Phone, MessageCircle } from "lucide-react"
 import { AnimatedSection } from "@/components/ui/animated-section"
+import { ContactModal } from "@/components/ui/contact-modal"
 
 export function PricesCTASection() {
   return (
@@ -26,20 +27,21 @@ export function PricesCTASection() {
 
           <AnimatedSection animation="fadeInUp" delay={600} duration={800}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact"
-                className="group bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
+              <ContactModal
+                title="Получить консультацию"
+                description="Обсудим ваши задачи и подберем оптимальное решение"
               >
-                <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                Получить консультацию
-              </a>
-              <a
-                href="tel:+79991234567"
-                className="group bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 border-2 border-gray-900 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2"
-              >
-                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                Позвонить сейчас
-              </a>
+                <button className="group bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2">
+                  <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Получить консультацию
+                </button>
+              </ContactModal>
+              <ContactModal title="Заказать звонок" description="Мы перезвоним вам в течение 15 минут">
+                <button className="group bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 border-2 border-gray-900 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  Позвонить сейчас
+                </button>
+              </ContactModal>
             </div>
           </AnimatedSection>
 

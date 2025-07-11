@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ContactModal } from "@/components/ui/contact-modal"
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -46,9 +47,11 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA Button */}
-        <Button className="hidden md:block bg-yellow-400 text-gray-900 hover:bg-yellow-500">
-          Получить консультацию
-        </Button>
+        <ContactModal>
+          <Button className="hidden md:block bg-yellow-400 text-gray-900 hover:bg-yellow-500">
+            Получить консультацию
+          </Button>
+        </ContactModal>
 
         {/* Mobile Menu Button */}
         <button
@@ -90,9 +93,11 @@ export function Header() {
             Контакты
           </a>
           <div className="pt-4 border-t border-gray-700">
-            <Button className="w-full bg-yellow-400 text-gray-900 hover:bg-yellow-500" onClick={closeMobileMenu}>
-              Получить консультацию
-            </Button>
+            <ContactModal>
+              <Button className="w-full bg-yellow-400 text-gray-900 hover:bg-yellow-500" onClick={closeMobileMenu}>
+                Получить консультацию
+              </Button>
+            </ContactModal>
           </div>
         </nav>
       </div>

@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
+import { ContactModal } from "@/components/ui/contact-modal"
 
 export function HeroSection() {
   return (
@@ -24,16 +25,26 @@ export function HeroSection() {
 
             <AnimatedSection animation="fadeInUp" delay={400} duration={800}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 text-lg px-8 py-4">
-                  Начать работу <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 text-lg px-8 py-4"
+                <ContactModal
+                  title="Начать работу с BUNKER"
+                  description="Расскажите о своих потребностях, и мы подготовим персональное предложение"
                 >
-                  Рассчитать стоимость
-                </Button>
+                  <Button size="lg" className="bg-yellow-400 text-gray-900 hover:bg-yellow-500 text-lg px-8 py-4">
+                    Начать работу <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </ContactModal>
+                <ContactModal
+                  title="Рассчитать стоимость"
+                  description="Получите точный расчет стоимости наших услуг для вашего бизнеса"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-transparent border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 text-lg px-8 py-4"
+                  >
+                    Рассчитать стоимость
+                  </Button>
+                </ContactModal>
               </div>
             </AnimatedSection>
           </div>

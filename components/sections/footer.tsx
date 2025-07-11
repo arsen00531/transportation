@@ -11,17 +11,22 @@ export function Footer() {
             <div className="text-2xl font-bold text-yellow-400 mb-4">
               <BunkerLogo />
             </div>
-            <p className="text-gray-300 mb-4">
-              Надежный партнер в сфере фулфиллмента и логистики между Китаем и Россией.
-            </p>
+            <p className="text-gray-300 mb-4">Надежный партнер в сфере фулфиллмента в России.</p>
             <div className="space-y-2 text-gray-300">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+7 (999) 123-45-67</span>
+                <a href="tel:+79991234567" className="hover:text-yellow-400 transition-colors cursor-pointer">
+                  +7 (999) 123-45-67
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>info@bunker-logistics.ru</span>
+                <a
+                  href="mailto:info@bunker-logistics.ru"
+                  className="hover:text-yellow-400 transition-colors cursor-pointer"
+                >
+                  info@bunker-logistics.ru
+                </a>
               </div>
             </div>
           </div>
@@ -87,7 +92,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 BUNKER. Все права защищены.</p>
+          <p>© 2025 BUNKER. Все права защищены.</p>
         </div>
       </div>
     </footer>

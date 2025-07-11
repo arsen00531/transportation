@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { AnimatedSection } from "@/components/ui/animated-section"
+import { ContactModal } from "@/components/ui/contact-modal"
 
 export function CTASection() {
   return (
@@ -27,13 +28,15 @@ export function CTASection() {
                 Наши цены <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
-            >
-              Связаться с нами
-            </Button>
+            <ContactModal>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
+              >
+                Связаться с нами
+              </Button>
+            </ContactModal>
           </div>
         </AnimatedSection>
       </div>
