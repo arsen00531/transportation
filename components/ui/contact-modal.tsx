@@ -3,9 +3,6 @@
 import type React from "react"
 
 import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
 import { Phone, User, Send, Loader2 } from "lucide-react"
 import {
   Dialog,
@@ -15,25 +12,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { submitContactForm } from "@/app/actions/contact"
 import { toast } from "sonner"
-
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Имя должно содержать минимум 2 символа",
-  }),
-  phone: z
-    .string()
-    .min(18, {
-      message: "Введите корректный номер телефона",
-    })
-    .regex(/^\+7 $$\d{3}$$ \d{3}-\d{2}-\d{2}$/, {
-      message: "Номер телефона должен быть в формате +7 (999) 123-45-67",
-    }),
-})
 
 interface ContactModalProps {
   children: React.ReactNode
@@ -104,28 +86,60 @@ export function ContactModal({
 }: ContactModalProps) {
   const [open, setOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({})
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-    },
-  })
+  // Валидация формы
+  const validateForm = () => {
+    const newErrors: { name?: string; phone?: string } = {}
 
-  // Обработчик изменения номера телефона
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {
-    const formatted = formatPhoneNumber(e.target.value)
-    onChange(formatted)
+    if (!name.trim() || name.trim().length < 2) {
+      newErrors.name = "Имя должно содержать минимум 2 символа"
+    }
+
+    if (!phone.trim() || phone.length < 18) {
+      newErrors.phone = "Введите корректный номер телефона"
+    }
+
+    const phoneRegex = /^\+7 $$\d{3}$$ \d{3}-\d{2}-\d{2}$/
+    if (phone && !phoneRegex.test(phone)) {
+      newErrors.phone = "Номер телефона должен быть в формате +7 (999) 123-45-67"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
   }
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  // Обработчик изменения номера телефона
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneNumber(e.target.value)
+    setPhone(formatted)
+    if (errors.phone) {
+      setErrors({ ...errors, phone: undefined })
+    }
+  }
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value)
+    if (errors.name) {
+      setErrors({ ...errors, name: undefined })
+    }
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+
+    if (!validateForm()) {
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
       const formData = new FormData()
-      formData.append("name", values.name)
-      formData.append("phone", values.phone)
+      formData.append("name", name)
+      formData.append("phone", phone)
 
       const result = await submitContactForm(formData)
 
@@ -133,7 +147,9 @@ export function ContactModal({
         toast.success("Заявка отправлена!", {
           description: result.message,
         })
-        form.reset()
+        setName("")
+        setPhone("")
+        setErrors({})
         setOpen(false)
       }
     } catch (error) {
@@ -157,88 +173,71 @@ export function ContactModal({
           <DialogDescription className="text-gray-600">{description}</DialogDescription>
         </DialogHeader>
 
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <User className="h-4 w-4" />
-                    Ваше имя
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Введите ваше имя"
-                      {...field}
-                      className="focus:border-yellow-400 focus:ring-yellow-400"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-sm font-medium">
+              <User className="h-4 w-4" />
+              Ваше имя
+            </label>
+            <Input
+              placeholder="Введите ваше имя"
+              value={name}
+              onChange={handleNameChange}
+              className="focus:border-yellow-400 focus:ring-yellow-400"
             />
+            {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
+          </div>
 
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    Номер телефона
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="+7 (999) 123-45-67"
-                      {...field}
-                      onChange={(e) => handlePhoneChange(e, field.onChange)}
-                      onFocus={(e) => {
-                        // Если поле пустое, автоматически ставим +7
-                        if (!e.target.value) {
-                          field.onChange("+7")
-                        }
-                      }}
-                      className="focus:border-yellow-400 focus:ring-yellow-400 font-mono"
-                      maxLength={18}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-sm font-medium">
+              <Phone className="h-4 w-4" />
+              Номер телефона
+            </label>
+            <Input
+              placeholder="+7 (999) 123-45-67"
+              value={phone}
+              onChange={handlePhoneChange}
+              onFocus={(e) => {
+                // Если поле пустое, автоматически ставим +7
+                if (!e.target.value) {
+                  setPhone("+7")
+                }
+              }}
+              className="focus:border-yellow-400 focus:ring-yellow-400 font-mono"
+              maxLength={18}
             />
+            {errors.phone && <p className="text-sm text-red-500">{errors.phone}</p>}
+          </div>
 
-            <div className="flex gap-3 pt-4">
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => setOpen(false)}
-                className="flex-1"
-                disabled={isSubmitting}
-              >
-                Отмена
-              </Button>
-              <Button
-                type="submit"
-                className="flex-1 bg-yellow-400 text-gray-900 hover:bg-yellow-500"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Отправка...
-                  </>
-                ) : (
-                  <>
-                    <Send className="mr-2 h-4 w-4" />
-                    Отправить
-                  </>
-                )}
-              </Button>
-            </div>
-          </form>
-        </Form>
+          <div className="flex gap-3 pt-4">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setOpen(false)}
+              className="flex-1"
+              disabled={isSubmitting}
+            >
+              Отмена
+            </Button>
+            <Button
+              type="submit"
+              className="flex-1 bg-yellow-400 text-gray-900 hover:bg-yellow-500"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Отправка...
+                </>
+              ) : (
+                <>
+                  <Send className="mr-2 h-4 w-4" />
+                  Отправить
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
 
         <div className="text-xs text-gray-500 text-center mt-4">
           Нажимая "Отправить", вы соглашаетесь с обработкой персональных данных
