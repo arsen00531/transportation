@@ -5,11 +5,12 @@ import { useEffect, useRef, useState } from "react"
 interface AnimatedCounterProps {
   end: number
   duration?: number
+  preffix?: string,
   suffix?: string
   className?: string
 }
 
-export function AnimatedCounter({ end, duration = 2000, suffix = "", className }: AnimatedCounterProps) {
+export function AnimatedCounter({ end, duration = 2000, preffix = "", suffix = "", className }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -55,6 +56,7 @@ export function AnimatedCounter({ end, duration = 2000, suffix = "", className }
 
   return (
     <div ref={ref} className={className}>
+      {preffix}
       {count}
       {suffix}
     </div>

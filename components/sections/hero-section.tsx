@@ -91,7 +91,7 @@ export function HeroSection() {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400">
-                На <AnimatedCounter end={28.9} suffix="%" />
+                <AnimatedCounter end={28.9} preffix="На " suffix="%" />
               </div>
               <div className="text-gray-300">Дешевле чем у конкурентов</div>
             </div>
