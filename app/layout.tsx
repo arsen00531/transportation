@@ -1,7 +1,8 @@
 import type React from "react"
 import "./globals.css"
 import { Toaster } from "sonner"
-import { ScrollToHashWithOffset } from "@/components/ui/scroll-to-hash-with-offset" // Импортируем новый компонент
+import { ScrollToHashWithOffset } from "@/components/ui/scroll-to-hash-with-offset"
+import { gilroy } from "@/lib/fonts" // Импортируем шрифт Gilroy
 
 export default function RootLayout({
   children,
@@ -14,15 +15,17 @@ export default function RootLayout({
         <title>BUNKER - Фулфиллмент услуги</title>
         <meta name="description" content="Надежный партнер в сфере фулфиллмента в России" />
       </head>
-      <body>
+      <body className={`${gilroy.variable} font-gilroy`}>
+        {" "}
+        {/* Применяем шрифт Gilroy как основной */}
         <Toaster position="top-right" />
         {children}
-        <ScrollToHashWithOffset /> {/* Добавляем компонент для прокрутки */}
+        <ScrollToHashWithOffset />
       </body>
     </html>
   )
 }
 
 export const metadata = {
-      generator: 'v0.dev'
-    };
+  generator: "v0.dev",
+}

@@ -15,6 +15,8 @@ export function Footer() {
             </div>
             <p className="text-gray-300 mb-4">Надежный партнер в сфере фулфиллмента в России.</p>
             <div className="space-y-2 text-gray-300">
+              {" "}
+              {/* Удален font-sans, чтобы не использовать Gilroy */}
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 <a href="tel:+79991234567" className="hover:text-yellow-400 transition-colors cursor-pointer">
@@ -99,7 +101,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>© 2025 BUNKER. Все права защищены.</p>
+          <p> {/* Удален font-sans, чтобы не использовать Gilroy */}© 2025 BUNKER. Все права защищены.</p>
         </div>
       </div>
     </footer>
