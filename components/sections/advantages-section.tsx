@@ -21,7 +21,11 @@ export function AdvantagesSection() {
     {
       icon: Package,
       title: "Скорость упаковки",
-      description: "До 5 000 единиц в день — быстро и без потери качества",
+      description: (
+        <>
+          <b>Упаковываем свыше 5000 единиц в день</b> - быстро и без потери качества
+        </>
+      )
     },
     {
       icon: Tag,

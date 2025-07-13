@@ -7,8 +7,8 @@ export function ContactSection() {
       icon: Phone,
       title: "Телефон",
       info: [
-        { text: "+7 (495) 123-45-67", href: "tel:+74951234567" },
-        { text: "+86 138 0013 8000", href: "tel:+8613800138000" },
+        { text: "+7 (917) 597-38-69", href: "tel:+79175973869" },
+        { text: "+7 (919) 685-23-08", href: "tel:+79196852308" },
       ],
     },
     {

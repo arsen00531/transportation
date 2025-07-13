@@ -20,7 +20,7 @@ export function ProcessSection() {
     {
       number: 4,
       title: "Доставка",
-      description: "Доставляем товар до ваших складов в России",
+      description: "Осуществляем доставку товара на все склады по территории России.",
     },
   ]
 
