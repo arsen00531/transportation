@@ -1,23 +1,19 @@
 import { Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { AnimatedSection } from "@/components/ui/animated-section"
+import BunkerLogo from "@/components/ui/bunker-text-logo"
 
 export function AboutTeamSection() {
   const teamMembers = [
     {
-      name: "Алексей Петров",
+      name: "Тимербулат",
       position: "Генеральный директор",
-      description: "15 лет опыта в международной логистике. Основатель компании, эксперт по китайскому рынку.",
+      description: "Основатель компании, отвечает за операционные процессы",
     },
     {
-      name: "Мария Сидорова",
-      position: "Директор по операциям",
-      description: "Отвечает за операционную деятельность компании, контроль качества и развитие процессов.",
-    },
-    {
-      name: "Дмитрий Козлов",
-      position: "Руководитель склада в Китае",
-      description: "Координирует работу складских комплексов в Китае, контролирует приемку и отправку товаров.",
+      name: "Усман",
+      position: "Генеральный директор",
+      description: "Отвечает за качество упаковки и транспортировки товаров",
     },
   ]
 
@@ -27,11 +23,11 @@ export function AboutTeamSection() {
         <AnimatedSection animation="fadeInUp" duration={800}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Наша команда</h2>
-            <p className="text-xl text-gray-600">Профессионалы, которые делают BUNKER лучше каждый день</p>
+            <p className="text-xl text-gray-600">Профессионалы, которые делают <BunkerLogo /> лучше каждый день</p>
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className={`grid md:grid-cols-${teamMembers.length} gap-8 max-w-6xl mx-auto`}>
           {teamMembers.map((member, index) => (
             <AnimatedSection key={index} animation="fadeInUp" delay={index * 200} duration={800}>
               <Card className="text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300">

@@ -1,14 +1,23 @@
-import { Calendar, TrendingUp, Globe, Award } from "lucide-react"
+import { Calendar, TrendingUp, Globe, Award, Clock, Tag, Headset } from "lucide-react"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
-import BunkerTextLogo from "@/components/ui/bunker-text-logo" // Обновите импорт
+import BunkerTextLogo from "@/components/ui/bunker-text-logo"
+
+type TStat = {
+  icon: React.ElementType;
+  number: number;
+  textInstead?: string; // Use text instead of number if needed
+  suffix?: string;
+  preffix?: string;
+  label: string;
+}
 
 export function AboutCompanyStorySection() {
-  const stats = [
-    { icon: Calendar, number: 2018, label: "Год основания" },
-    { icon: TrendingUp, number: 500, suffix: "+", label: "Довольных клиентов" },
-    { icon: Globe, number: 15, label: "Городов доставки" },
-    { icon: Award, number: 99.8, suffix: "%", label: "Сохранность" },
+  const stats: TStat[] = [
+    { icon: Clock, number: 5000, suffix: "ед./день", label: "Скорость" },
+    { icon: Tag, number: 28.9, preffix: "На ", suffix: "%", label: "Дешевле чем у конкурентов" },
+    { icon: Headset, number: 0, textInstead: "24/7", label: "Поддержка" },
+    { icon: Award, number: 3, label: "Года на рынке" },
   ]
 
   return (
@@ -46,11 +55,10 @@ export function AboutCompanyStorySection() {
                       <div className="text-center group hover:scale-105 transition-transform duration-300">
                         <stat.icon className="h-12 w-12 text-yellow-400 mx-auto mb-2 group-hover:rotate-12 transition-transform duration-300" />
                         <div className="text-2xl font-bold text-gray-900">
-                          {stat.number === 2018 ? (
-                            stat.number
-                          ) : (
-                            <AnimatedCounter end={stat.number} suffix={stat.suffix || ""} />
-                          )}
+                          { stat.textInstead
+                            ? stat.textInstead
+                            : <AnimatedCounter end={stat.number} suffix={stat.suffix || ""} preffix={stat.preffix || ""} />
+                          }
                         </div>
                         <div className="text-gray-600">{stat.label}</div>
                       </div>
