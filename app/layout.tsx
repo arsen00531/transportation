@@ -1,6 +1,7 @@
 import type React from "react"
 import "./globals.css"
 import { Toaster } from "sonner"
+import { ScrollToHashWithOffset } from "@/components/ui/scroll-to-hash-with-offset" // Импортируем новый компонент
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <Toaster position="top-right" />
         {children}
+        <ScrollToHashWithOffset /> {/* Добавляем компонент для прокрутки */}
       </body>
     </html>
   )

@@ -8,12 +8,12 @@ import { AboutMissionValuesSection } from "@/components/sections/about/mission-v
 import { AboutTeamSection } from "@/components/sections/about/team-section"
 import { AboutGeographySection } from "@/components/sections/about/geography-section"
 import { AboutAchievementsSection } from "@/components/sections/about/achievements-section"
-import { ScrollToTop } from "@/components/ui/scroll-to-top"
+// import { ScrollToTop } from "@/components/ui/scroll-to-top" // Удаляем старый импорт
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <ScrollToTop />
+      {/* <ScrollToTop /> */} {/* Удаляем старый компонент */}
       <Header />
       <AboutHeroSection />
       <AboutCompanyStorySection />

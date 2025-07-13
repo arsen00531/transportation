@@ -7,12 +7,12 @@ import { PricesServicesSection } from "@/components/sections/prices/services-sec
 import { PricesStorageSection } from "@/components/sections/prices/storage-section"
 import { PricesShippingSection } from "@/components/sections/prices/shipping-section"
 import { PricesCTASection } from "@/components/sections/prices/cta-section"
-import { ScrollToTop } from "@/components/ui/scroll-to-top"
+// import { ScrollToTop } from "@/components/ui/scroll-to-top" // Удаляем старый импорт
 
 export default function PricesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <ScrollToTop />
+      {/* <ScrollToTop /> */} {/* Удаляем старый компонент */}
       <Header />
       <PricesHeroSection />
       <PricesServicesSection />

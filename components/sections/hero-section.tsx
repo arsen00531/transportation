@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { ContactModal } from "@/components/ui/contact-modal"
+import BunkerTextLogo from "@/components/ui/bunker-text-logo"
 
 export function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export function HeroSection() {
           <div className="text-center lg:text-left">
             <AnimatedSection animation="fadeInLeft" duration={800}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-                Фулфиллмент <span className="font-bold text-yellow-400 font-serif">BUNKER</span>
+                Фулфиллмент <BunkerTextLogo />
               </h1>
             </AnimatedSection>
 

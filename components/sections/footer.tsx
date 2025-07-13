@@ -1,6 +1,7 @@
 import Link from "next/link"
-import BunkerLogo from "../ui/bunker-logo"
 import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react"
+import BunkerImageLogo from "../ui/bunker-image-logo"
+import BunkerTextLogo from "../ui/bunker-text-logo"
 
 export function Footer() {
   return (
@@ -8,8 +9,9 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <div className="text-2xl font-bold text-yellow-400 mb-4">
-              <BunkerLogo />
+            <div className="flex items-center gap-2 mb-4">
+              <BunkerImageLogo width={102} height={102} />
+              <BunkerTextLogo className="text-2xl" />
             </div>
             <p className="text-gray-300 mb-4">Надежный партнер в сфере фулфиллмента в России.</p>
             <div className="space-y-2 text-gray-300">
@@ -50,14 +52,19 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-yellow-400 transition-colors">
+                <Link href="/#services" className="hover:text-yellow-400 transition-colors">
                   Услуги
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-yellow-400 transition-colors">
+                <Link href="/#process" className="hover:text-yellow-400 transition-colors">
+                  Как работаем
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contact" className="hover:text-yellow-400 transition-colors">
                   Контакты
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

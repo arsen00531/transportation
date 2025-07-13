@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Убедимся, что scroll-behavior: smooth; удален из CSS, чтобы избежать конфликтов с JS-логикой */
+/* html {
+  scroll-behavior: smooth;
+} */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

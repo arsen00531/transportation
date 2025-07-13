@@ -1,7 +1,7 @@
 import { Calendar, TrendingUp, Globe, Award } from "lucide-react"
-import BunkerLogo from "@/components/ui/bunker-logo"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
+import BunkerTextLogo from "@/components/ui/bunker-text-logo" // Обновите импорт
 
 export function AboutCompanyStorySection() {
   const stats = [
@@ -27,7 +27,7 @@ export function AboutCompanyStorySection() {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Начало пути</h3>
                 <p className="text-gray-600 mb-6">
-                  Компания <BunkerLogo /> была основана группой предпренимателей, которые столкнулись с множествами
+                  Компания <BunkerTextLogo /> была основана группой предпренимателей, которые столкнулись с множествами
                   проблем при работе с другими фулфиллментами, учитывая все трудности и недостатки существующих решений,
                   мы решили создать идеальный сервис, который подходит большинству селлеров.
                 </p>

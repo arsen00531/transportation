@@ -1,4 +1,4 @@
-import BunkerLogo from "@/components/ui/bunker-logo"
+import BunkerTextLogo from "@/components/ui/bunker-text-logo"
 import { AnimatedSection } from "@/components/ui/animated-section"
 
 export function AboutHeroSection() {
@@ -7,7 +7,7 @@ export function AboutHeroSection() {
       <div className="container mx-auto px-4 text-center">
         <AnimatedSection animation="fadeInDown" duration={1000}>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            О компании <BunkerLogo />
+            О компании <BunkerTextLogo />
           </h1>
         </AnimatedSection>
 
