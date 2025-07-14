@@ -16,7 +16,7 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "BUNKER - Фулфиллмент для маркетплейсовв",
+  title: "BUNKER - Фулфиллмент для маркетплейсов",
   description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
   icons: {
     icon: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   manifest: "/favicons/site.webmanifest",
   generator: "v0.dev",
   openGraph: {
-    title: "BUNKER - Фулфиллмент для маркетплейсов",
+    title: "BUNKER - Фулфиллмент для маркетплейсовв",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах",
     url: "https://fulfilment-moskov.ru",
     siteName: "BUNKER",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BUNKER - Фулфиллмент для маркетплейсов",
+    title: "BUNKER - Фулфиллмент для маркетплейсову",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
     images: ["https://fulfilment-moskov.ru/images/try-with-yellow.png"], // Абсолютный URL
   },
