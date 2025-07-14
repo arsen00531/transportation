@@ -1,7 +1,5 @@
 "use client"
 
-import { Header } from "@/components/sections/header"
-import { Footer } from "@/components/sections/footer"
 import { PricesHeroSection } from "@/components/sections/prices/hero-section"
 import { PricesServicesSection } from "@/components/sections/prices/services-section"
 import { PricesStorageSection } from "@/components/sections/prices/storage-section"
@@ -13,13 +11,11 @@ export default function PricesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* <ScrollToTop /> */} {/* Удаляем старый компонент */}
-      <Header />
       <PricesHeroSection />
       <PricesServicesSection />
       <PricesStorageSection />
       <PricesShippingSection />
       <PricesCTASection />
-      <Footer />
     </div>
   )
 }

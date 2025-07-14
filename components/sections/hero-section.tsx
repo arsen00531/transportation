@@ -4,6 +4,7 @@ import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { ContactModal } from "@/components/ui/contact-modal"
 import BunkerTextLogo from "@/components/ui/bunker-text-logo"
+import Image from "next/image" // Импортируем Image из next/image
 
 export function HeroSection() {
   return (
@@ -53,16 +54,22 @@ export function HeroSection() {
           {/* Image */}
           <AnimatedSection animation="fadeInRight" delay={300} duration={1000}>
             <div className="relative">
-              <div className="relative z-10">
-                <img
-                  src="/placeholder.svg?height=500&width=600"
+              <div className="relative z-10 w-full h-[500px]">
+                {" "}
+                {/* Добавляем фиксированную высоту для fill */}
+                <Image
+                  src="/placeholder.svg" // Используем placeholder.svg
                   alt="Фулфиллмент услуги - упаковка и доставка товаров из Китая"
-                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  fill // Заполняет родительский контейнер
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" // Адаптивные размеры [^1]
+                  style={{ objectFit: "cover" }} // Обрезает изображение, чтобы оно покрывало контейнер
+                  className="rounded-2xl shadow-2xl"
                 />
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full opacity-10 blur-2xl"></div>
               </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full opacity-10 blur-2xl"></div>
 
               {/* Floating cards with stats */}
               <AnimatedSection animation="scaleIn" delay={800} duration={600}>

@@ -4,30 +4,29 @@ export const gilroy = localFont({
   src: [
     {
       path: "../public/fonts/gilroy/Gilroy-Light.ttf",
-      weight: "300", // Light
+      weight: "300",
       style: "normal",
     },
     {
       path: "../public/fonts/gilroy/Gilroy-Regular.ttf",
-      weight: "400", // Regular
+      weight: "400",
       style: "normal",
     },
     {
       path: "../public/fonts/gilroy/Gilroy-Medium.ttf",
-      weight: "500", // Medium
+      weight: "500",
       style: "normal",
     },
     {
       path: "../public/fonts/gilroy/Gilroy-Bold.ttf",
-      weight: "700", // Bold
+      weight: "700",
       style: "normal",
     },
     {
       path: "../public/fonts/gilroy/Gilroy-Heavy.ttf",
-      weight: "900", // Heavy
+      weight: "900",
       style: "normal",
     },
   ],
-  variable: "--font-gilroy", // CSS переменная для использования в Tailwind
-  display: "swap",
+  variable: "--font-gilroy",
 })

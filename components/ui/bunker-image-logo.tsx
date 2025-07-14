@@ -1,22 +1,21 @@
+import type React from "react"
 import Image from "next/image"
 
-interface BunkerImageLogoProps {
-  className?: string
+interface BunkerImageLogoProps extends React.ComponentProps<typeof Image> {
   width?: number
   height?: number
 }
 
-function BunkerImageLogo({ className, width = 102, height = 102 }: BunkerImageLogoProps) {
+export default function BunkerImageLogo({ width = 102, height = 102, ...props }: BunkerImageLogoProps) {
   return (
     <Image
-      src="/images/try-with-yellow.png"
+      src="/images/try-with-yellow.png" // Используем ваш новый PNG-логотип
       alt="BUNKER Logo"
       width={width}
       height={height}
-      className={className}
-      priority // Логотип часто виден сразу, поэтому можно добавить priority
+      priority={true} // Устанавливаем fetchpriority="high" для логотипа
+      style={{ objectFit: "contain" }} // Адаптивный стиль для контейнера
+      {...props}
     />
   )
 }
-
-export default BunkerImageLogo

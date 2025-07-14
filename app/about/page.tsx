@@ -1,7 +1,5 @@
 "use client"
 
-import { Header } from "@/components/sections/header"
-import { Footer } from "@/components/sections/footer"
 import { AboutHeroSection } from "@/components/sections/about/hero-section"
 import { AboutCompanyStorySection } from "@/components/sections/about/company-story-section"
 import { AboutMissionValuesSection } from "@/components/sections/about/mission-values-section"
@@ -11,12 +9,10 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* <ScrollToTop /> */} {/* Удаляем старый компонент */}
-      <Header />
       <AboutHeroSection />
       <AboutCompanyStorySection />
       <AboutMissionValuesSection />
       <AboutTeamSection />
-      <Footer />
     </div>
   )
 }
