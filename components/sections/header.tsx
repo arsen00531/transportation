@@ -52,7 +52,7 @@ export function Header() {
         {/* Desktop CTA Button */}
         <ContactModal>
           <Button className="hidden xl:block bg-yellow-400 text-gray-900 hover:bg-yellow-500">
-            Получить консультацию
+            Получить конс��льтацию
           </Button>
         </ContactModal>
 
