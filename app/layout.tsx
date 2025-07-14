@@ -16,7 +16,7 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "BUNKER - Фулфиллмент для маркетплейсов",
+  title: "BUNKER - Фулфиллмент для маркетплейсовв",
   description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
   icons: {
     icon: [
