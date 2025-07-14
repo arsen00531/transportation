@@ -1,7 +1,7 @@
 import type React from "react"
 import Image from "next/image"
 
-interface BunkerImageLogoProps extends React.ComponentProps<typeof Image> {
+interface BunkerImageLogoProps extends Omit<React.ComponentProps<typeof Image>, 'src' | 'alt'> {
   width?: number
   height?: number
 }
@@ -9,12 +9,12 @@ interface BunkerImageLogoProps extends React.ComponentProps<typeof Image> {
 export default function BunkerImageLogo({ width = 102, height = 102, ...props }: BunkerImageLogoProps) {
   return (
     <Image
-      src="/images/try-with-yellow.png" // Используем ваш новый PNG-логотип
+      src="/images/try-with-yellow.png"
       alt="BUNKER Logo"
       width={width}
       height={height}
-      priority={true} // Устанавливаем fetchpriority="high" для логотипа
-      style={{ objectFit: "contain" }} // Адаптивный стиль для контейнера
+      priority={true}
+      style={{ objectFit: "contain", scale: ".7" }}
       {...props}
     />
   )

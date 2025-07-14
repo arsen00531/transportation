@@ -20,18 +20,21 @@ export const metadata: Metadata = {
   description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
   icons: {
     icon: [
-      { url: "/favicon.ico" }, // Стандартный favicon
-      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" }, // Оптимизированный размер
-      { url: "/images/favicon-192x192.png", sizes: "192x192", type: "image/png" }, // Для Android Chrome
-      { url: "/images/favicon-512x512.png", sizes: "512x512", type: "image/png" }, // Для более крупных иконок
+      { url: "/favicons/favicon.ico", sizes: "16x16 32x32" },
+      { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicons/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/_last-big-logo.svg", type: "image/svg+xml" },
     ],
-    apple: { url: "/images/favicon-180x180.png", sizes: "180x180", type: "image/png" }, // Apple Touch Icon
+    apple: { url: "/favicons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    shortcut: "/favicons/favicon.ico",
   },
+  manifest: "/favicons/site.webmanifest",
   generator: "v0.dev",
   openGraph: {
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    url: "https://fulfilment-moskov.ru", // Замените на ваш реальный домен
+    url: "https://fulfilment-moskov.ru",
     siteName: "BUNKER",
     images: [
       {
