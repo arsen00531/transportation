@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   generator: "v0.dev",
   openGraph: {
     title: "BUNKER - Фулфиллмент для маркетплейсов",
-    description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
+    description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах",
     url: "https://fulfilment-moskov.ru",
     siteName: "BUNKER",
     images: [
