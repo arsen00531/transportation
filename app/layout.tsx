@@ -19,7 +19,13 @@ export const metadata: Metadata = {
   title: "BUNKER - Фулфиллмент для маркетплейсов",
   description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
   icons: {
-    icon: "/favicon.ico", // Добавляем ваш favicon
+    icon: [
+      { url: "/favicon.ico" }, // Стандартный favicon
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" }, // Оптимизированный размер
+      { url: "/images/favicon-192x192.png", sizes: "192x192", type: "image/png" }, // Для Android Chrome
+      { url: "/images/favicon-512x512.png", sizes: "512x512", type: "image/png" }, // Для более крупных иконок
+    ],
+    apple: { url: "/images/favicon-180x180.png", sizes: "180x180", type: "image/png" }, // Apple Touch Icon
   },
   generator: "v0.dev",
   openGraph: {
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "BUNKER",
     images: [
       {
-        url: "/images/try-with-yellow.png", // Путь к вашему логотипу
+        url: "/images/try-with-yellow.png", // Путь к вашему логотипу для Open Graph (здесь большой размер уместен)
         width: 1200,
         height: 630,
         alt: "BUNKER Logo",
@@ -42,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: ["/images/try-with-yellow.png"], // Путь к вашему логотипу
+    images: ["/images/try-with-yellow.png"], // Путь к вашему логотипу для Twitter (здесь большой размер уместен)
   },
 }
 
