@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "BUNKER",
     images: [
       {
-        url: "https://fulfilment-moskov.ru/images/try-with-yellow.png", // Используйте абсолютный URL
+        url: "images/try-with-yellow.png", // Используйте абсолютный URL
         width: 1200,
         height: 630,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсову",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: ["https://fulfilment-moskov.ru/images/try-with-yellow.png"], // Абсолютный URL
+    images: ["images/try-with-yellow.png"], // Абсолютный URL
   },
 }
 
