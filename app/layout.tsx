@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
     images: ["images/try-with-yellow.png"], // Абсолютный URL
   },
+  other: {
+    'google-site-verification': 'G-0E5T9PLRD7', // если нужно
+  },
 }
 
 export default function RootLayout({
@@ -63,13 +66,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${gilroy.variable} font-gilroy`}>
-        {/* Google Analytics */}
+      <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0E5T9PLRD7"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -77,7 +79,8 @@ export default function RootLayout({
             gtag('config', 'G-0E5T9PLRD7');
           `}
         </Script>
-
+      </head>
+      <body className={`${fontSans.variable} ${gilroy.variable} font-gilroy`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           <main>{children}</main>
