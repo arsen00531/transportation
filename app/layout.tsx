@@ -56,6 +56,7 @@ export const metadata: Metadata = {
   },
   other: {
     'google-site-verification': 'G-0E5T9PLRD7', // если нужно
+    'yandex-verification': '908ceea3a54dc6a4', // пример
   },
 }
 
