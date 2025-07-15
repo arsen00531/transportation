@@ -40,9 +40,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: "images/try-with-yellow.png", // Используйте абсолютный URL
-        width: 1200,
-        height: 630,
+        width: 525,
+        height: 525,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
+        type : "image/png"
       },
     ],
     locale: "ru_RU",
