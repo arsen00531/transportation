@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://fulfilment-moskov.ru/images/bunker-logo-last.jpg", // Используйте абсолютный URL
-        width: 525,
-        height: 525,
+        width: 512,
+        height: 561,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
-        type : "image/jpg"
+        type : "image/jpeg"
       },
     ],
     locale: "ru_RU",
