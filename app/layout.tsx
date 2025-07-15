@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсову",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: ["https://fulfilment-moskov.ru/images/tbunker-logo-last.jpg"], // Абсолютный URL
+    images: ["https://fulfilment-moskov.ru/images/bunker-logo-last.jpg"], // Абсолютный URL
   },
   other: {
     'google-site-verification': 'G-0E5T9PLRD7', // если нужно
