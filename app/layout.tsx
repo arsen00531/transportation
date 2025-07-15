@@ -69,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0E5T9PLRD7"
           strategy="beforeInteractive"

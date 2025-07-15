@@ -23,8 +23,7 @@ export function ContactSection() {
       icon: MapPin,
       title: "Офисы",
       info: [
-        { text: "Москва, Россия", href: null },
-        { text: "Гуанчжоу, Китай", href: null },
+        { text: "Москва, Солдатский переулок, 8", href: "https://yandex.ru/maps/org/bunker/180877153807" },
       ],
     },
   ]
