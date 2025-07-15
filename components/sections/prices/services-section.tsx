@@ -28,7 +28,7 @@ export function PricesServicesSection() {
               <h2 className="text-3xl font-bold text-gray-900">Услуги</h2>
             </div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Полный ��пектр услуг по обработке и подготовке товаров к отправке
+              Полный спектр услуг по обработке и подготовке товаров к отправке
             </p>
           </div>
         </AnimatedSection>
