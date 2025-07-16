@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://fulfilment-moskov.ru/',
+  siteUrl: 'https://fulfillment-moscow.ru',
   generateRobotsTxt: true,
   changefreq: 'monthly',
   priority: 0.7,

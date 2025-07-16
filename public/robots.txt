@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://fulfilment-moskov.ru/
+Host: https://fulfillment-moscow.ru
 
 # Sitemaps
-Sitemap: https://fulfilment-moskov.ru/sitemap.xml
+Sitemap: https://fulfillment-moscow.ru/sitemap.xml

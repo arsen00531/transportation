@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Mona_Sans as FontSans } from "next/font/google"
+import { Inter as FontSans } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
