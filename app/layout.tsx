@@ -16,10 +16,13 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://fulfilment-moskov.ru'
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || 'G-0E5T9PLRD7'
+const YM_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || '103351196'
+
 export const metadata: Metadata = {
   title: "BUNKER - Фулфиллмент для маркетплейсов | Склад, упаковка, доставка",
-  description:
-    "Профессиональный фулфилмент для Ozon, Wildberries и других маркетплейсов. Фулфилмент Москва и область - склад, упаковка, доставка товаров. Работа с возвратами и полная автоматизация процессов.",
+  description: "Профессиональный фулфилмент для Ozon, Wildberries и других маркетплейсов. Фулфилмент Москва и область - склад, упаковка, доставка товаров. Работа с возвратами и полная автоматизация процессов.",
   keywords:
     "фулфилмент, фулфилмент озон, фулфилмент ozon, фулфилмент wildberries, фулфилмент для маркетплейсов, фулфилмент москва, фулфилмент россия, фулфилмент это простыми словами, фулфилмент для маркетплейсов цена, работа фулфилмент москва, склад фулфилмент, упаковка товаров, доставка заказов, обработка возвратов, автоматизация склада, логистика маркетплейсов",
   icons: {
@@ -38,11 +41,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах",
-    url: "https://fulfilment-moskov.ru",
+    url: SITE_URL,
     siteName: "BUNKER",
     images: [
       {
-        url: "https://fulfilment-moskov.ru/images/bunker-logo-last.jpg",
+        url: `${SITE_URL}/images/bunker-logo-last.jpg`,
         width: 512,
         height: 561,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
@@ -56,11 +59,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: ["https://fulfilment-moskov.ru/images/bunker-logo-last.jpg"],
+    images: [`${SITE_URL}/images/bunker-logo-last.jpg`],
   },
   other: {
     "google-site-verification": "G-0E5T9PLRD7",
-    "yandex-verification": "908ceea3a54dc6a4",
+    "yandex-verification": "f616bd34ff0cb41c",
   },
 }
 
@@ -72,17 +75,16 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="https://fulfilment-moskov.ru/favicon.svg" type="image/svg+xml" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-0E5T9PLRD7" strategy="beforeInteractive" />
+        <link rel="icon" href={`${SITE_URL}/favicon.svg`} type="image/svg+xml" />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="beforeInteractive" />
         <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-0E5T9PLRD7');
+            gtag('config', '${GA_ID}');
           `}
         </Script>
-        {/* Yandex.Metrika counter */}
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -91,23 +93,20 @@ export default function RootLayout({
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-            ym(103349890, "init", {
+            ym(${YM_ID}, "init", {
               clickmap:true,
               trackLinks:true,
               accurateTrackBounce:true
             });
           `}
         </Script>
-        {/* /Yandex.Metrika counter */}
       </head>
       <body className={`${fontSans.variable} ${gilroy.variable} font-gilroy`}>
-        {/* Yandex.Metrika noscript */}
         <noscript>
           <div>
-            <img src="https://mc.yandex.ru/watch/103349890" style={{position:"absolute", left:"-9999px"}} alt="" />
+            <img src={`https://mc.yandex.ru/watch/${YM_ID}`} style={{position:"absolute", left:"-9999px"}} alt="" />
           </div>
         </noscript>
-        {/* /Yandex.Metrika noscript */}
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           <main>{children}</main>
