@@ -27,7 +27,8 @@ export const metadata: Metadata = {
     "фулфилмент, фулфилмент озон, фулфилмент ozon, фулфилмент wildberries, фулфилмент для маркетплейсов, фулфилмент москва, фулфилмент россия, фулфилмент это простыми словами, фулфилмент для маркетплейсов цена, работа фулфилмент москва, склад фулфилмент, упаковка товаров, доставка заказов, обработка возвратов, автоматизация склада, логистика маркетплейсов",
   icons: {
     icon: [
-      { url: "/favicons/favicon.ico", sizes: "16x16 32x32" },
+      { url: "/favicon.ico", sizes: "16x16 32x32", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicons/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
@@ -45,11 +46,11 @@ export const metadata: Metadata = {
     siteName: "BUNKER",
     images: [
       {
-        url: `${SITE_URL}/images/try-with-yellow.png`,
+        url: `${SITE_URL}/images/try-with-yellow.jpg`,
         width: 525,
         height: 525,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
     locale: "ru_RU",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: [`${SITE_URL}/images/try-with-yellow.png`],
+    images: [`${SITE_URL}/images/try-with-yellow.jpg`],
   },
   other: {
     "google-site-verification": "G-0E5T9PLRD7",
