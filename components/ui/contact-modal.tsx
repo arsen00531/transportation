@@ -93,7 +93,7 @@ export function ContactModal({
     return Object.keys(newErrors).length === 0
   }
 
-  // Обработчик изменения номера телефона
+  // Обработч��к изменения номера телефона
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatPhoneNumber(e.target.value)
     setPhone(formatted)

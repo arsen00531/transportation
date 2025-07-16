@@ -32,7 +32,7 @@ export function ProcessSection() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Как мы работаем</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Чёткий и понятный процесс — от приёма товара до доставки клиенту. Мы берём на себя все этапы, чтобы вы
-              сосредоточились на продажах.
+              сосредоточились на ��родажах.
             </p>
           </div>
         </AnimatedSection>
