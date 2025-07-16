@@ -45,11 +45,11 @@ export const metadata: Metadata = {
     siteName: "BUNKER",
     images: [
       {
-        url: `${SITE_URL}/images/bunker-logo-last.jpg`,
-        width: 512,
-        height: 561,
+        url: `${SITE_URL}/images/try-with-yellow.png`,
+        width: 525,
+        height: 525,
         alt: "BUNKER - Фулфиллмент для маркетплейсов",
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
     locale: "ru_RU",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BUNKER - Фулфиллмент для маркетплейсов",
     description: "Надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.",
-    images: [`${SITE_URL}/images/bunker-logo-last.jpg`],
+    images: [`${SITE_URL}/images/try-with-yellow.png`],
   },
   other: {
     "google-site-verification": "G-0E5T9PLRD7",
