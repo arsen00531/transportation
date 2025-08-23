@@ -23,7 +23,7 @@ interface ContactModalProps {
   description?: string
 }
 
-// Обновите функцию `formatPhoneNumber` следующим образом:
+// Функция форматирования номера телефона
 function formatPhoneNumber(value: string): string {
   // Удаляем все символы кроме цифр
   const numbers = value.replace(/\D/g, "")
@@ -48,7 +48,7 @@ function formatPhoneNumber(value: string): string {
   // Форматируем номер
   let formatted = "+7"
   if (cleanNumbers.length > 1) {
-    formatted += ` ${cleanNumbers.slice(1, 4)}` // Удалены скобки
+    formatted += ` ${cleanNumbers.slice(1, 4)}`
 
     if (cleanNumbers.length > 4) {
       formatted += ` ${cleanNumbers.slice(4, 7)}`
@@ -61,7 +61,7 @@ function formatPhoneNumber(value: string): string {
     }
   }
 
-  return formatted.trim() // Обрезаем пробелы в конце
+  return formatted.trim()
 }
 
 export function ContactModal({
@@ -83,7 +83,7 @@ export function ContactModal({
       newErrors.name = "Имя должно содержать минимум 2 символа"
     }
 
-    // Обновленная валидация для нового формата
+    // Валидация номера телефона
     const phoneDigits = phone.replace(/\D/g, "")
     if (!phoneDigits || phoneDigits.length !== 11) {
       newErrors.phone = "Введите корректный номер телефона (11 цифр)"
@@ -93,7 +93,7 @@ export function ContactModal({
     return Object.keys(newErrors).length === 0
   }
 
-  // Обработч��к изменения номера телефона
+  // Обработчик изменения номера телефона
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatPhoneNumber(e.target.value)
     setPhone(formatted)
@@ -120,7 +120,7 @@ export function ContactModal({
 
     try {
       const formData = new FormData()
-      formData.append("name", name)
+      formData.append("name", name.trim())
       formData.append("phone", phone.replace(/\D/g, "")) // Отправляем только цифры на сервер
 
       const result = await submitContactForm(formData)
@@ -129,12 +129,25 @@ export function ContactModal({
         toast.success("Заявка отправлена!", {
           description: result.message,
         })
+
+        // Дополнительное уведомление о статусе отправки в Telegram
+        if (result.telegramSent) {
+          toast.success("Уведомление отправлено!", {
+            description: "Мы получили вашу заявку и скоро свяжемся с вами",
+          })
+        }
+
         setName("")
         setPhone("")
         setErrors({})
         setOpen(false)
+      } else {
+        toast.error("Ошибка отправки", {
+          description: result.message || "Попробуйте еще раз",
+        })
       }
     } catch (error) {
+      console.error("Form submission error:", error)
       toast.error("Ошибка отправки", {
         description: "Попробуйте еще раз или свяжитесь с нами по телефону",
       })
@@ -166,6 +179,7 @@ export function ContactModal({
               value={name}
               onChange={handleNameChange}
               className="focus:border-yellow-400 focus:ring-yellow-400"
+              disabled={isSubmitting}
             />
             {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
           </div>
@@ -176,7 +190,7 @@ export function ContactModal({
               Номер телефона
             </label>
             <Input
-              placeholder="+7 XXX XXX-XX-XX" // Обновленный плейсхолдер
+              placeholder="+7 XXX XXX-XX-XX"
               value={phone}
               onChange={handlePhoneChange}
               onFocus={(e) => {
@@ -186,7 +200,8 @@ export function ContactModal({
                 }
               }}
               className="focus:border-yellow-400 focus:ring-yellow-400 font-mono"
-              maxLength={16} // Максимальная длина для +7 XXX XXX-XX-XX (11 цифр + 5 пробелов/дефисов)
+              maxLength={16}
+              disabled={isSubmitting}
             />
             {errors.phone && <p className="text-sm text-red-500">{errors.phone}</p>}
           </div>
