@@ -4,7 +4,7 @@ import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { ContactModal } from "@/components/ui/contact-modal"
 import BunkerTextLogo from "@/components/ui/bunker-text-logo"
-import Image from "next/image" // Импортируем Image из next/image
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -54,16 +54,15 @@ export function HeroSection() {
           {/* Image */}
           <AnimatedSection animation="fadeInRight" delay={300} duration={1000}>
             <div className="relative">
-              <div className="relative z-10 w-full h-[500px]">
-                {" "}
-                {/* Добавляем фиксированную высоту для fill */}
+              <div className="relative z-10 w-full h-[300px] sm:h-[400px] lg:h-[500px]">
                 <Image
-                  src="/placeholder.svg" // Используем placeholder.svg
-                  alt="Фулфиллмент услуги - упаковка и доставка товаров из Китая"
-                  fill // Заполняет родительский контейнер
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw" // Адаптивные размеры [^1]
-                  style={{ objectFit: "cover" }} // Обрезает изображение, чтобы оно покрывало контейнер
+                  src="/images/fulfillment-packaging.jpg"
+                  alt="Фулфиллмент услуги - упаковка и доставка товаров"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                  style={{ objectFit: "cover" }}
                   className="rounded-2xl shadow-2xl"
+                  priority
                 />
               </div>
 
@@ -71,18 +70,18 @@ export function HeroSection() {
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 blur-xl"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full opacity-10 blur-2xl"></div>
 
-              {/* Floating cards with stats */}
+              {/* Floating cards with stats - адаптивное позиционирование */}
               <AnimatedSection animation="scaleIn" delay={800} duration={600}>
-                <div className="absolute top-8 -left-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-yellow-400">500+</div>
-                  <div className="text-sm text-gray-300">Клиентов</div>
+                <div className="absolute top-4 -left-2 sm:top-8 sm:-left-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                  <div className="text-xl sm:text-2xl font-bold text-yellow-400">500+</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Клиентов</div>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection animation="scaleIn" delay={1000} duration={600}>
-                <div className="absolute bottom-8 -right-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <div className="text-2xl font-bold text-yellow-400">99.8%</div>
-                  <div className="text-sm text-gray-300">Сохранность</div>
+                <div className="absolute bottom-4 -right-2 sm:bottom-8 sm:-right-4 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
+                  <div className="text-xl sm:text-2xl font-bold text-yellow-400">99.8%</div>
+                  <div className="text-xs sm:text-sm text-gray-300">Сохранность</div>
                 </div>
               </AnimatedSection>
             </div>

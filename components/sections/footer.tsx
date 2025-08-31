@@ -1,6 +1,6 @@
 import Link from "next/link"
 import BunkerTextLogo from "@/components/ui/bunker-text-logo"
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Instagram, MessageCircle, Mail, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -12,14 +12,23 @@ export function Footer() {
             Ваш надёжный партнёр по фулфилменту в России — для выгодной и стабильной работы на маркетплейсах.
           </p>
           <div className="flex space-x-4">
-            <Link href="#" className="text-gray-400 hover:text-yellow-400 transition-colors" prefetch={false}>
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-yellow-400 transition-colors" prefetch={false}>
+            <Link
+              href="https://www.instagram.com/bunker.fulfillment/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-yellow-400 transition-colors"
+              prefetch={false}
+            >
               <Instagram className="h-6 w-6" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-yellow-400 transition-colors" prefetch={false}>
-              <Linkedin className="h-6 w-6" />
+            <Link
+              href="https://t.me/FFbunkerFF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-yellow-400 transition-colors"
+              prefetch={false}
+            >
+              <MessageCircle className="h-6 w-6" />
             </Link>
           </div>
         </div>
