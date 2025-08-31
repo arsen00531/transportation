@@ -1,4 +1,4 @@
-import { Calendar, TrendingUp, Globe, Award, Clock, Tag, Headset } from "lucide-react"
+import { Award, Clock, Tag, Headset } from "lucide-react"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
 import BunkerTextLogo from "@/components/ui/bunker-text-logo"

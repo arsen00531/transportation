@@ -11,6 +11,8 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://fulfillment-moscow.ru'
+
 export const metadata: Metadata = {
   title: "Bunker - Фулфилмент услуги для маркетплейсов | Склад, упаковка, доставка",
   description:
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://yourdomain.com",
+    url: SITE_URL,
     siteName: "Bunker Fulfillment",
     title: "Bunker - Фулфилмент услуги для маркетплейсов",
     description:
@@ -91,7 +93,7 @@ export const metadata: Metadata = {
   },
   manifest: "/favicons/site.webmanifest",
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: SITE_URL,
   },
     generator: 'v0.app'
 }

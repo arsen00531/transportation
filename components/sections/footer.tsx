@@ -69,15 +69,31 @@ export function Footer() {
           <div className="space-y-2 text-sm font-sans">
             <p className="flex items-center">
               <Phone className="h-5 w-5 mr-2 text-yellow-400" />
-              +7 (XXX) XXX-XX-XX
+              <a
+                href="tel:+79175973869"
+                className="hover:text-yellow-600 transition-colors cursor-pointer hover:underline"
+              >
+                +7 (917) 597-38-69
+              </a>
             </p>
             <p className="flex items-center">
               <Mail className="h-5 w-5 mr-2 text-yellow-400" />
-              info@bunker.ru
+              <a
+                href="mailto:bogolovusman1@gmail.com"
+                className="hover:text-yellow-600 transition-colors cursor-pointer hover:underline"
+              >
+                bogolovusman1@gmail.com
+              </a>
             </p>
             <p className="flex items-start">
               <MapPin className="h-5 w-5 mr-2 text-yellow-400 flex-shrink-0" />
-              г. Москва, ул. Примерная, д. 1
+              <a
+                href="https://yandex.ru/maps/org/bunker/180877153807"
+                className="hover:text-yellow-600 transition-colors cursor-pointer hover:underline"
+                target="_blank"
+              >
+                Москва, Солдатский переулок, 8
+              </a>
             </p>
           </div>
         </div>

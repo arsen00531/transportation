@@ -15,8 +15,7 @@ export function ContactSection() {
       icon: Mail,
       title: "Email",
       info: [
-        { text: "info@bunker-logistics.com", href: "mailto:info@bunker-logistics.com" },
-        { text: "support@bunker-logistics.com", href: "mailto:support@bunker-logistics.com" },
+        { text: "bogolovusman1@gmail.com", href: "mailto:bogolovusman1@gmail.com" },
       ],
     },
     {
